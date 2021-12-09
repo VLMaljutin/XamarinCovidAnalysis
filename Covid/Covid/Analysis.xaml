@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Covid.Analysis"
+             xmlns:local="clr-namespace:Covid;assembly=Covid"
+             xmlns:windows="clr-namespace:Xamarin.Forms.PlatformConfiguration.WindowsSpecific;assembly=Xamarin.Forms.Core"
+             windows:TabbedPage.HeaderIconsEnabled="true">
+    <TabbedPage.Children>
+        <NavigationPage IconImageSource="world.png">
+            <x:Arguments>
+                <local:World/>
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage IconImageSource="britain.png">
+            <x:Arguments>
+                <local:Britain/>
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage IconImageSource="germany.png">
+            <x:Arguments>
+                <local:Germany/>
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage IconImageSource="iran.png">
+            <x:Arguments>
+                <local:Iran/>
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage IconImageSource="ispain.png">
+            <x:Arguments>
+                <local:Spain/>
+
+            </x:Arguments>
+        </NavigationPage>
+       
+        <NavigationPage IconImageSource="italy.jpg">
+            <x:Arguments>
+                <local:Italy/>
+
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage IconImageSource="china.png">
+            <x:Arguments>
+                <local:China/>
+
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage IconImageSource="russia.png" >
+            <x:Arguments>
+                <local:Russia/>
+
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage IconImageSource="usa.png">
+            <x:Arguments>
+                <local:Usa/>
+
+            </x:Arguments>
+        </NavigationPage>
+
+    </TabbedPage.Children>
+</TabbedPage>
