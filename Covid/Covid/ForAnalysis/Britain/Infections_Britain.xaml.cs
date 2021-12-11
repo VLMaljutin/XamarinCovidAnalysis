@@ -13,10 +13,10 @@ namespace Covid.ForAnalysis.Britain
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Infections_Britain : ContentPage
     {
-        Test vm;
+        Britain_Infections vm;
         public Infections_Britain()
         {
-            vm = new Test();
+            vm = new Britain_Infections();
             InitializeComponent();
             this.BindingContext = vm;
         }

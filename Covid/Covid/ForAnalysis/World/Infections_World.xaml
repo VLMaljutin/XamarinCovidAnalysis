@@ -1,12 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:oxy="clr-namespace:OxyPlot.Xamarin.Forms;assembly=OxyPlot.Xamarin.Forms"
              x:Class="Covid.ForAnalysis.Infections_World">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Заражение"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+    <AbsoluteLayout>
+
+        <oxy:PlotView Model="{Binding PieModel}"/>
+        <Label x:Name="textLabel" Text="Введите кол-во дней" FontSize="20" TextColor="Aqua" Margin="55,-5,0,0"/>
+        <Entry x:Name="Number" BackgroundColor="yellow" WidthRequest="65" HeightRequest="50" FontSize="20" Margin="60,30,0,0"/>
+        <Button x:Name="Tap" Clicked="Tap_Clicked" WidthRequest="65" Background="red" Margin="130,30,0,0"/>
+        
+    </AbsoluteLayout>
+    
 </ContentPage>

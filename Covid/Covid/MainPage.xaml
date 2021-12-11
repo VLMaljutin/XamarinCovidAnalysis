@@ -5,9 +5,10 @@
              x:Class="Covid.MainPage"
              xmlns:local="clr-namespace:Covid;assembly=Covid"
              xmlns:windows="clr-namespace:Xamarin.Forms.PlatformConfiguration.WindowsSpecific;assembly=Xamarin.Forms.Core"
-             windows:TabbedPage.HeaderIconsEnabled="true">
+             windows:TabbedPage.HeaderIconsEnabled="true" 
+            >
     <TabbedPage.Children>
-        <NavigationPage Title="Главная страница" IconImageSource="main.png">
+        <NavigationPage Title="Главная страница" IconImageSource="main.png" >
             <x:Arguments>
                 <local:Main/>
             </x:Arguments>
