@@ -2,11 +2,30 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Covid.Main">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Главная страница"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+    <StackLayout>
+        <Frame BorderColor="Gray" BackgroundColor="Aqua" CornerRadius="5">
+            <StackLayout>
+                <Label Text="Главная страница" HorizontalOptions="Center" FontSize="Large"/>
+                <Label Text="На главной странице вы можете выбрать пункт сдачи пцр теста или пункт вакцинации от covid-19 в городе Казани" HorizontalOptions="Center" FontSize="Large"/>
+                <Picker x:Name="picker" Title="1) Пункты сдачи ПЦР теста" SelectedIndexChanged="picker_SelectedIndexChanged" FontSize="Large">
+                    <Picker.Items>
+                    <x:String>Инвитро</x:String>
+                    <x:String>СитиЛаб</x:String>
+                    <x:String>КДЛ</x:String>
+                    <x:String>РАЗУМЕД</x:String>
+                    <x:String>БИОМЕД</x:String>
+                 </Picker.Items>
+                </Picker>
+                <Picker x:Name="picker2" Title="2) Пункты вакцинации" SelectedIndexChanged="picker2_SelectedIndexChanged" FontSize="Large">
+                    <Picker.Items>
+                        <x:String>ТЦ МЕГА (пр.Победы, 141)</x:String>
+                        <x:String>ТЦ ЮЖНЫЙ (пр.Победы, 91)</x:String>
+                        <x:String>МО СПАСЕНИЕ (ул.Хади Такташа, 115/1)</x:String>
+                        <x:String>КЦ САЙДАШ (ул.Николая Ершова, 57а)</x:String>
+                        <x:String>ТЦ МЕГАСТРОЙ(пр.Победы, 101)</x:String>
+                    </Picker.Items>
+                </Picker>
+            </StackLayout>
+        </Frame>
+    </StackLayout>
 </ContentPage>
