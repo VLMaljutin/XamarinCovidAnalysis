@@ -25,6 +25,7 @@
                         <x:String>ТЦ МЕГАСТРОЙ(пр.Победы, 101)</x:String>
                     </Picker.Items>
                 </Picker>
+                <Image Source="covid.jpg"/>
             </StackLayout>
         </Frame>
     </StackLayout>
