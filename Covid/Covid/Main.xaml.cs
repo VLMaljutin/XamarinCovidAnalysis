@@ -25,8 +25,10 @@ namespace Covid
             {
                 case 0:
                     var result = await DisplayAlert("Перейти на сайт клиники ИНВИТРО", null, "Да", "Нет");
+                    
                     if (result)
                     {
+                        
                         await Launcher.OpenAsync(new Uri("https://www.invitro.ru/"));
                     }
                     break;

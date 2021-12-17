@@ -11,15 +11,14 @@ using Xamarin.Forms;
 
 namespace Covid.Model.World
 {
-    class World_Infections
+    class World_Death
     {
         public PlotModel PieModel { get; set; }
 
-        public World_Infections(int a)
+        public World_Death(int a)
         {
             PieModel = CreatePieChart(a);
         }
-
         private PlotModel CreatePieChart(int a)
         {
             List<string> britain_arr = new List<string>();
@@ -31,7 +30,6 @@ namespace Covid.Model.World
             List<string> russia_arr = new List<string>();
             List<string> usa_arr = new List<string>();
             int i = 0;
-            
             var plotModel1 = new PlotModel();
             int b = 0;
             var britainlineSeries = new LineSeries
@@ -115,35 +113,35 @@ namespace Covid.Model.World
                 MarkerStroke = OxyColors.Aqua
             };
             AssetManager assets = Forms.Context.Assets;
-            using (StreamReader reader = new StreamReader(assets.Open("infections.csv")))
+            using (StreamReader reader = new StreamReader(assets.Open("death.csv")))
             {
                 if (reader != null)
                 {
                     using (var csv = new CsvReader(reader, CultureInfo.CurrentCulture))
                     {
-                        
-                            while (b<=a && csv.Read())
-                            {
-                                var britain = csv.GetField(1);
-                                britain_arr.Add(britain);
-                                var germany = csv.GetField(2);
-                                germany_arr.Add(germany);
-                                var iran = csv.GetField(3);
-                                iran_arr.Add(iran);
-                                var spain = csv.GetField(4);
-                                spain_arr.Add(spain);
-                                var italy = csv.GetField(5);
-                                italy_arr.Add(italy);
-                                var china = csv.GetField(6);
-                                china_arr.Add(china);
-                                var russia = csv.GetField(7);
-                                russia_arr.Add(russia);
-                                var usa = csv.GetField(8);
-                                usa_arr.Add(usa);
-                                i++;
-                                b++;
-                            }
-                        
+
+                        while (b <= a && csv.Read())
+                        {
+                            var britain = csv.GetField(1);
+                            britain_arr.Add(britain);
+                            var germany = csv.GetField(2);
+                            germany_arr.Add(germany);
+                            var iran = csv.GetField(3);
+                            iran_arr.Add(iran);
+                            var spain = csv.GetField(4);
+                            spain_arr.Add(spain);
+                            var italy = csv.GetField(5);
+                            italy_arr.Add(italy);
+                            var china = csv.GetField(6);
+                            china_arr.Add(china);
+                            var russia = csv.GetField(7);
+                            russia_arr.Add(russia);
+                            var usa = csv.GetField(8);
+                            usa_arr.Add(usa);
+                            
+                            b++;
+                        }
+
                     }
                 }
             }
@@ -172,3 +170,4 @@ namespace Covid.Model.World
         }
     }
 }
+

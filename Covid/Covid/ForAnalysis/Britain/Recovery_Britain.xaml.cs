@@ -1,22 +1,17 @@
-﻿using Covid.Model.World;
+﻿using Covid.Model.Country;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Covid.ForAnalysis.World
+namespace Covid.ForAnalysis.Britain
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Death_World : ContentPage
+    public partial class Recovery_Britain : ContentPage
     {
-        World_Death vm;
-        public Death_World()
+        Country_Recovery vm;
+        public Recovery_Britain()
         {
-            vm = new World_Death(0);
+            vm = new Country_Recovery(0,1);
             InitializeComponent();
             this.BindingContext = vm;
         }
@@ -24,12 +19,12 @@ namespace Covid.ForAnalysis.World
         private void Tap2_Clicked(object sender, EventArgs e)
         {
             int a;
-            World_Death vm1;
+            Country_Recovery vm1;
 
             try
             {
                 a = int.Parse(Number2.Text);
-                vm1 = new World_Death(a);
+                vm1 = new Country_Recovery(a,1);
                 this.BindingContext = vm1;
                 textLabel2.Text = "Введите кол-во дней";
                 if (a < 0 || a == -0)
@@ -48,6 +43,7 @@ namespace Covid.ForAnalysis.World
             {
                 textLabel2.Text = "Вы ввели не число";
             }
+
         }
     }
 }

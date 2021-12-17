@@ -1,4 +1,4 @@
-﻿using Covid.Model.World;
+﻿using Covid.Model.Country;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,15 +8,15 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Covid.ForAnalysis.World
+namespace Covid.ForAnalysis.Iran
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Death_World : ContentPage
+    public partial class Death_Iran : ContentPage
     {
-        World_Death vm;
-        public Death_World()
+        Country_Death vm;
+        public Death_Iran()
         {
-            vm = new World_Death(0);
+            vm = new Country_Death(0, 3);
             InitializeComponent();
             this.BindingContext = vm;
         }
@@ -24,13 +24,11 @@ namespace Covid.ForAnalysis.World
         private void Tap2_Clicked(object sender, EventArgs e)
         {
             int a;
-            World_Death vm1;
-
             try
             {
                 a = int.Parse(Number2.Text);
-                vm1 = new World_Death(a);
-                this.BindingContext = vm1;
+                vm = new Country_Death(a, 3);
+                this.BindingContext = vm;
                 textLabel2.Text = "Введите кол-во дней";
                 if (a < 0 || a == -0)
                 {
