@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace Covid
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Russia : ContentPage
+    public partial class Russia : TabbedPage
     {
         public Russia()
         {

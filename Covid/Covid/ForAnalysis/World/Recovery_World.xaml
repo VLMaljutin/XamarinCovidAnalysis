@@ -9,7 +9,7 @@
         <Label x:Name="textLabel1" Text="Введите кол-во дней" FontSize="20" TextColor="Aqua" Margin="55,-5,0,0"/>
         <Entry x:Name="Number1" BackgroundColor="yellow" WidthRequest="65" HeightRequest="50" FontSize="20" Margin="60,50,0,0"/>
 
-        <Button x:Name="Tap" Clicked="Tap_Clicked1" WidthRequest="65" Background="red" Margin="130,50,0,0"/>
+        <Button x:Name="Tap" Text="Нажмите на кнопку" Clicked="Tap_Clicked1" WidthRequest="120" Background="red" Margin="130,50,0,0"/>
 
     </AbsoluteLayout>
 </ContentPage>

@@ -32,9 +32,9 @@ namespace Covid.ForAnalysis.World
                 vm1 = new World_Recovery(a);
                 this.BindingContext = vm1;
                 textLabel1.Text = "Введите кол-во дней";
-                if (a < 0 || a == -0)
+                if (a < 0 )
                 {
-                    textLabel1.Text = "Число меньше нуля или вы ввели -0";
+                    textLabel1.Text = "Число меньше нуля ";
                 }
 
 

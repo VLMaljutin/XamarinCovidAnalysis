@@ -1,11 +1,5 @@
-﻿using Covid.Model;
-using Covid.Model.Country;
+﻿using Covid.Model.Country;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -33,9 +27,9 @@ namespace Covid.ForAnalysis.Britain
                 vm1 = new Country_Infections(a,1);
                 this.BindingContext = vm1;
                 textLabel2.Text = "Введите кол-во дней";
-                if (a < 0 || a == -0)
+                if (a < 0 )
                 {
-                    textLabel2.Text = "Число меньше нуля или вы ввели -0";
+                    textLabel2.Text = "Число меньше нуля ";
                 }
 
 

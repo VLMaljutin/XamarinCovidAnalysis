@@ -18,7 +18,7 @@
                 <local:About/>
             </x:Arguments>
         </NavigationPage>
-        <NavigationPage Title="Анализ данных" IconImageSource="analysis.png">
+        <NavigationPage Title="Статистика" IconImageSource="analysis.png">
             <x:Arguments>
                 <local:Analysis/>
             </x:Arguments>

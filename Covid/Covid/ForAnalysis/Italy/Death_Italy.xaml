@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:oxy="clr-namespace:OxyPlot.Xamarin.Forms;assembly=OxyPlot.Xamarin.Forms"
+             x:Class="Covid.ForAnalysis.Italy.Death_Italy">
+    <AbsoluteLayout>
+
+        <oxy:PlotView Model="{Binding PieModel}"/>
+
+        <Label x:Name="textLabel2" Text="Введите кол-во дней" FontSize="20" TextColor="Aqua" Margin="55,-5,0,0"/>
+        <Entry x:Name="Number2" BackgroundColor="yellow" WidthRequest="65" HeightRequest="50" FontSize="20" Margin="60,50,0,0"/>
+
+        <Button x:Name="Tap2" Text="Нажмите на кнопку" Clicked="Tap2_Clicked" WidthRequest="120" Background="red" Margin="130,50,0,0"/>
+    </AbsoluteLayout>
+</ContentPage>

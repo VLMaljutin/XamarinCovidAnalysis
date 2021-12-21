@@ -31,9 +31,9 @@ namespace Covid.ForAnalysis
                 vm1 = new World_Infections(a);
                 this.BindingContext = vm1;
                 textLabel.Text = "Введите кол-во дней";
-                if (a < 0 || a == -0)
+                if (a < 0 )
                 {
-                    textLabel.Text = "Число меньше нуля или вы ввели -0";
+                    textLabel.Text = "Число меньше нуля ";
                 }
 
 

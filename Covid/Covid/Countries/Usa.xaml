@@ -1,12 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Covid.Usa">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="США"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
-</ContentPage>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Covid.ForAnalysis.Usa"
+            x:Class="Covid.Usa">
+
+    <TabbedPage.Children>
+        <NavigationPage Title="Заражение">
+            <x:Arguments>
+                <local:Infections_Usa/>
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Title="Выздоровление">
+            <x:Arguments>
+                <local:Recovery_Usa/>
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Title="Смертей">
+            <x:Arguments>
+                <local:Death_Usa/>
+            </x:Arguments>
+        </NavigationPage>
+        
+    </TabbedPage.Children>
+</TabbedPage>
