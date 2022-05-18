@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Covid.ForMain.Kazan">
+    <ScrollView>
+        <StackLayout>
+            <Frame BorderColor="Gray" BackgroundColor="Aqua" CornerRadius="5">
+                <StackLayout>
+                    <Label Text="Главная страница" HorizontalOptions="Center" FontSize="Large"/>
+                    <Label Text="На этой странице вы можете выбрать клинику для сдачи пцр теста или пункт вакцинации от covid-19 в городе Казани" HorizontalOptions="Center" FontSize="Large"/>
+                    <Picker x:Name="picker" Title="1)Клиники для сдачи ПЦР теста" SelectedIndexChanged="picker_SelectedIndexChanged" FontSize="Large">
+                        <Picker.Items>
+                            <x:String>Инвитро</x:String>
+                            <x:String>СитиЛаб</x:String>
+                            <x:String>КДЛ</x:String>
+                            <x:String>РАЗУМЕД</x:String>
+                            <x:String>БИОМЕД</x:String>
+                            <x:String>Doctor Lab</x:String>
+                            <x:String>Полимед</x:String>
+                            <x:String>ДНКОМ</x:String>
+                            <x:String>Гемотест</x:String>
+                            <x:String>Айболит</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    <Picker x:Name="picker2" Title="2) Пункты вакцинации" SelectedIndexChanged="picker2_SelectedIndexChanged" FontSize="Large">
+                        <Picker.Items>
+                            <x:String>ТЦ Парк Хаус (пр.Ямашева, 46/33</x:String>
+                            <x:String>ТЦ ЮЖНЫЙ (пр.Победы, 91)</x:String>
+                            <x:String>МО СПАСЕНИЕ (ул.Хади Такташа, 115/1)</x:String>
+                            <x:String>КЦ САЙДАШ (ул.Николая Ершова, 57а)</x:String>
+                            <x:String>КФУ (ул. Вишневского, 2А)</x:String>
+                            <x:String>ТЦ ЦУМ (ул. Московская, 2)</x:String>
+                            <x:String>КДЦ (ул. Четаева, 34А)</x:String>
+                            <x:String>Городская поликлиника № 10 (ул. Чистопольская, 43)</x:String>
+                            <x:String>Городская поликлиника № 7 (ул. Фатыха Карима, 14/67)</x:String>
+                            <x:String>Центральная городская клиническая больница № 18 (ул.Кирпичная, 7)</x:String>
+                        </Picker.Items>
+                    </Picker>
+                    <Image Source="covid.jpg"/>
+                    <Label Text="Данное приложение создал студент 4 курса КФУ ИВМиИТ Малютин Василий, и оно предназначено для общего пользования во имя победы над пандемией &#128515; &#128515; &#128515;" FontSize="20"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

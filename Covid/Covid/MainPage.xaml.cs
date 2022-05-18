@@ -14,7 +14,6 @@ namespace Covid
         //Test vm;
         public MainPage()
         {
-            //vm = new Test();
             InitializeComponent();
             //this.BindingContext = vm;
         }
