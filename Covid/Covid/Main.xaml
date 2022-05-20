@@ -11,6 +11,11 @@
                 <local:Kazan/>
             </x:Arguments>
         </NavigationPage>
+        <NavigationPage Title="Москва">
+            <x:Arguments>
+                <local:Moscow/>
+            </x:Arguments>
+        </NavigationPage>
     </TabbedPage.Children>
     
 </TabbedPage>
