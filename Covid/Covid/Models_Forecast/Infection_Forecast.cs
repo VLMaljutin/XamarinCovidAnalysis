@@ -21,12 +21,12 @@ namespace Covid.Models_Forecast
         {
 
         }
-        public Infection_Forecast(int i)
+        public Infection_Forecast(int i, int type)
         {
-            PieModel = CreatePieChart(i);
+            PieModel = CreatePieChart(i, type);
         }
 
-        private PlotModel CreatePieChart(int i)
+        private PlotModel CreatePieChart(int i, int type)
         {
             List<string> country_arr = new List<string>();
             var plotModel1 = new PlotModel();
@@ -72,14 +72,32 @@ namespace Covid.Models_Forecast
                 inputs[j] = j;
                 outputs[j] = double.Parse(country_arr[j]);
             }
-            OrdinaryLeastSquares ols = new OrdinaryLeastSquares();
-            SimpleLinearRegression regression = ols.Learn(inputs, outputs);
-            double[] pred = regression.Transform(inputs);
-            for (int j = 1; j < country_arr.Count; j++)
+            if(type == 1)
             {
-                realSeries.Points.Add(new DataPoint(j, double.Parse(country_arr[j])));
-                predlineSeries.Points.Add(new DataPoint(j, pred[j]));
+                OrdinaryLeastSquares ols = new OrdinaryLeastSquares();
+                SimpleLinearRegression regression = ols.Learn(inputs, outputs);
+                double[] pred = regression.Transform(inputs);
+                for (int j = 1; j < country_arr.Count; j++)
+                {
+                    realSeries.Points.Add(new DataPoint(j, double.Parse(country_arr[j])));
+                    predlineSeries.Points.Add(new DataPoint(j, pred[j]));
 
+                }
+            }
+            else
+            {
+                var ls = new PolynomialLeastSquares()
+                {
+                    Degree = 2
+                };
+                PolynomialRegression regression = ls.Learn(inputs, outputs);
+                double[] pred = regression.Transform(inputs);
+                for (int j = 1; j < country_arr.Count; j++)
+                {
+                    realSeries.Points.Add(new DataPoint(j, double.Parse(country_arr[j])));
+                    predlineSeries.Points.Add(new DataPoint(j, pred[j]));
+
+                }
             }
             plotModel1.Series.Add(realSeries);
             plotModel1.Series.Add(predlineSeries);
