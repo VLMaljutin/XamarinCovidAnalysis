@@ -2,13 +2,19 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Covid.ForForecast.Russia_Forecast.Infection_Russia_Forecast">
-    <AbsoluteLayout>
-
-        <Label x:Name="textLabel" Text="Введите кол-во дней" FontSize="20" TextColor="Aqua" Margin="55,0,0,0"/>
-        <Entry x:Name="Number" BackgroundColor="yellow" WidthRequest="65" HeightRequest="50" FontSize="20" Margin="60,50,0,0"/>
-        <Button x:Name="Tap" Text="Нажмите на кнопку" Clicked="Tap_Clicked" WidthRequest="120" Background="red" Margin="130,50,0,0"/>
-        <Label x:Name="real" FontSize="20" TextColor="Aqua" Margin="100"/>
-        <Label x:Name="result" FontSize="20" TextColor="Aqua" Margin="150"/>
-        <Label x:Name="error" FontSize="20" TextColor="Aqua" Margin="200"/>
-    </AbsoluteLayout>
+    <StackLayout>
+        <Picker x:Name="picker" Title="Выберите вид прогнозирования" SelectedIndexChanged="picker_SelectedIndexChanged" FontSize="20" WidthRequest="1000">
+            <Picker.Items>
+                <x:String>Простая линейная регрессия</x:String>
+                <x:String>Полиномиальная линейная регрессия</x:String>
+            </Picker.Items>
+        </Picker>
+        <Label x:Name="textLabel" Text="Выберите дату" FontSize="20" TextColor="Aqua"/>
+        <DatePicker Format="D" DateSelected="DatePicker_DateSelected"  WidthRequest="1000">
+            <DatePicker.MinimumDate>1/22/2020</DatePicker.MinimumDate>
+        </DatePicker>
+        <Label x:Name="real" Text="Реальное значение" FontSize="15" TextColor="Aqua" WidthRequest="300"/>
+        <Label x:Name="prediction" Text="Прогноз" FontSize="15" TextColor="Aqua" WidthRequest="300"/>
+        <Label x:Name="error" Text="Точность прогноза" FontSize="15" TextColor="Aqua" WidthRequest="300"/>
+    </StackLayout>
 </ContentPage>

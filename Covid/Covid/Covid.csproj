@@ -149,7 +149,13 @@
     <EmbeddedResource Update="Forecast.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="ForForecast\Russia_Forecast\Infection_Russia_Chart.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="ForForecast\Russia_Forecast\Infection_Russia_Forecast.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ForForecast\Russia_Forecast\Infection_Russia_Tabbed.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="ForMain\Kazan.xaml">

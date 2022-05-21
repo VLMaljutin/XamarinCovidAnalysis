@@ -22,7 +22,7 @@
                 <local:Analysis/>
             </x:Arguments>
         </NavigationPage>
-        <NavigationPage Title="Прогнозирование">
+        <NavigationPage Title="Прогнозирование" IconImageSource="prognoz.png">
             <x:Arguments>
                 <local:Forecast/>
             </x:Arguments>

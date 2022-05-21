@@ -4,7 +4,7 @@
             x:Class="Covid.Forecast">
 
     <TabbedPage.Children>
-        <NavigationPage Title="Россия">
+        <NavigationPage IconImageSource="russia.png">
             <x:Arguments>
                 <local:Russia_Forecast/>
             </x:Arguments>
