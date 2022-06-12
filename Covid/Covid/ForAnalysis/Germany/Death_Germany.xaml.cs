@@ -13,41 +13,31 @@ namespace Covid.ForAnalysis.Germany
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Death_Germany : ContentPage
     {
-        Country_Death vm;
+        public int a;
+        public int b;
         public Death_Germany()
         {
-            vm = new Country_Death(0, 2);
+            
             InitializeComponent();
-            this.BindingContext = vm;
+            
         }
 
         private void Tap2_Clicked(object sender, EventArgs e)
         {
-            int a;
-            Country_Death vm1;
+            Country_Death vm;
+            vm = new Country_Death(a, b, 2);
+            this.BindingContext = vm;
+        }
+        private void datepicker1_DateSelected(object sender, DateChangedEventArgs e)
+        {
+            DateTime date = new DateTime(2020, 1, 22);
+            a = e.NewDate.Subtract(date).Days;
+        }
 
-            try
-            {
-                a = int.Parse(Number2.Text);
-                vm1 = new Country_Death(a, 2);
-                this.BindingContext = vm1;
-                textLabel2.Text = "Введите кол-во дней";
-                if (a < 0)
-                {
-                    textLabel2.Text = "Число меньше нуля";
-                }
-
-
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                textLabel2.Text = "Слишком большое число";
-
-            }
-            catch (FormatException)
-            {
-                textLabel2.Text = "Вы ввели не число";
-            }
+        private void datepicker2_DateSelected(object sender, DateChangedEventArgs e)
+        {
+            DateTime date = new DateTime(2020, 1, 22);
+            b = e.NewDate.Subtract(date).Days;
         }
     }
 }

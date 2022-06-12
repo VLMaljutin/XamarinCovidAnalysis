@@ -10,41 +10,31 @@ namespace Covid.ForAnalysis.Usa
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Infections_Usa : ContentPage
     {
-        Country_Infections vm;
+        public int a;
+        public int b;
         public Infections_Usa()
         {
-            vm = new Country_Infections(0, 8);
             InitializeComponent();
-            this.BindingContext = vm;
+            
         }
 
         private void Tap2_Clicked(object sender, EventArgs e)
         {
-            int a;
             Country_Infections vm;
+            vm = new Country_Infections(a, b, 8);
+            this.BindingContext = vm;
+        }
 
-            try
-            {
-                a = int.Parse(Number2.Text);
-                vm = new Country_Infections(a, 8);
-                this.BindingContext = vm;
-                textLabel2.Text = "Введите кол-во дней";
-                if (a < 0)
-                {
-                    textLabel2.Text = "Число меньше нуля ";
-                }
+        private void datepicker1_DateSelected(object sender, DateChangedEventArgs e)
+        {
+            DateTime date = new DateTime(2020, 1, 22);
+            a = e.NewDate.Subtract(date).Days;
+        }
 
-
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                textLabel2.Text = "Слишком большое число";
-
-            }
-            catch (FormatException)
-            {
-                textLabel2.Text = "Вы ввели не число";
-            }
+        private void datepicker2_DateSelected(object sender, DateChangedEventArgs e)
+        {
+            DateTime date = new DateTime(2020, 1, 22);
+            b = e.NewDate.Subtract(date).Days;
         }
     }
 }

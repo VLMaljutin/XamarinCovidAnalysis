@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:oxy="clr-namespace:OxyPlot.Xamarin.Forms;assembly=OxyPlot.Xamarin.Forms"
+             x:Class="Covid.ForForecast.Russia_Forecast.Infections_Russia_Chart_Day">
+    <AbsoluteLayout>
+        <Picker x:Name="picker" Title="Вид регрессии" SelectedIndexChanged="picker_SelectedIndexChanged" WidthRequest="500" >
+            <Picker.Items>
+                <x:String>Простая линейная регрессия</x:String>
+                <x:String>Полиномиальная линейная регрессия</x:String>
+            </Picker.Items>
+        </Picker>
+        <oxy:PlotView Model="{Binding PieModel}" Margin="0,30,0,0"/>
+    </AbsoluteLayout>
+</ContentPage>

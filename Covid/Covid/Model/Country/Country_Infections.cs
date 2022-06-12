@@ -15,16 +15,15 @@ namespace Covid.Model.Country
     {
         public PlotModel PieModel { get; set; }
 
-        public Country_Infections(int a,int i)
+        public Country_Infections(int a, int b,int i)
         {
-            PieModel = CreatePieChart(a, i);
+            PieModel = CreatePieChart(a, b , i);
         }
 
-        private PlotModel CreatePieChart(int a, int i)
+        private PlotModel CreatePieChart(int a, int b, int i)
         {
             List<string> country_arr = new List<string>();
             var plotModel1 = new PlotModel();
-            int b = 0;
             var lineSeries1 = new LineSeries
             { 
 
@@ -41,18 +40,16 @@ namespace Covid.Model.Country
                 {
                     using (var csv = new CsvReader(reader, CultureInfo.CurrentCulture))
                     {
-                        while (b <= a && csv.Read())
+                        while (csv.Read())
                         {
                             var country = csv.GetField(i);
                             country_arr.Add(country);
-
-                            b++;
                         }
                     }
                 }
                 }
 
-            for (int j = 1; j < a; j++)
+            for (int j = a; j < b; j++)
             {
                 lineSeries1.Points.Add(new DataPoint(j, double.Parse(country_arr[j])));
 

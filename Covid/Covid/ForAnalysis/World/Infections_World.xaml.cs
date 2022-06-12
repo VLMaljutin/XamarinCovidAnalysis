@@ -1,10 +1,5 @@
 ﻿using Covid.Model.World;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,40 +8,36 @@ namespace Covid.ForAnalysis
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Infections_World : ContentPage
     {
-        World_Infections vm;
+        public int type;
+        public int a;
+        public int b;
+       
         public Infections_World()
         {
-            vm = new World_Infections(0);
+            
             InitializeComponent();
-            this.BindingContext = vm;
+            
         }
 
         private void Tap_Clicked(object sender, EventArgs e)
         {
-            int a;
             World_Infections vm1;
             
-                try {
-                a = int.Parse(Number.Text);
-                vm1 = new World_Infections(a);
+                vm1 = new World_Infections(a, b);
                 this.BindingContext = vm1;
-                textLabel.Text = "Введите кол-во дней";
-                if (a < 0 )
-                {
-                    textLabel.Text = "Число меньше нуля ";
-                }
+        }
 
 
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                textLabel.Text = "Слишком большое число";
+        private void datepicker1_DateSelected(object sender, DateChangedEventArgs e)
+        {
+            DateTime date = new DateTime(2020, 1, 22);
+            a = e.NewDate.Subtract(date).Days;
+        }
 
-            }
-            catch (FormatException)
-            {
-                textLabel.Text = "Вы ввели не число";
-            }
+        private void datepicker2_DateSelected(object sender, DateChangedEventArgs e)
+        {
+            DateTime date = new DateTime(2020, 1, 22);
+            b = e.NewDate.Subtract(date).Days;
         }
     }
 }

@@ -16,6 +16,11 @@
                 <local:Moscow/>
             </x:Arguments>
         </NavigationPage>
+        <NavigationPage Title="Санкт-Петербург">
+            <x:Arguments>
+                <local:SaintP/>
+            </x:Arguments>
+        </NavigationPage>
     </TabbedPage.Children>
     
 </TabbedPage>

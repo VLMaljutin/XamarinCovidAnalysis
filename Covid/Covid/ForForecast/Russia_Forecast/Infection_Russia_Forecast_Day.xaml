@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Covid.ForForecast.Russia_Forecast.Infection_Russia_Forecast_Day">
+    <StackLayout>
+        <Picker x:Name="picker" Title="Выберите вид прогнозирования" SelectedIndexChanged="picker_SelectedIndexChanged" FontSize="20" WidthRequest="1000">
+            <Picker.Items>
+                <x:String>Простая линейная регрессия</x:String>
+                <x:String>Полиномиальная линейная регрессия</x:String>
+            </Picker.Items>
+        </Picker>
+        <Label x:Name="textLabel" Text="Выберите дату" FontSize="20" TextColor="Aqua"/>
+        <DatePicker Format="D" DateSelected="DatePicker_DateSelected"  WidthRequest="1000">
+            <DatePicker.MinimumDate>1/22/2020</DatePicker.MinimumDate>
+        </DatePicker>
+        <Label x:Name="real" Text="Реальное значение" FontSize="15" TextColor="Aqua" WidthRequest="300"/>
+        <Label x:Name="prediction" Text="Прогноз" FontSize="15" TextColor="Aqua" WidthRequest="300"/>
+        <Label x:Name="error" Text="Точность прогноза" FontSize="15" TextColor="Aqua" WidthRequest="300"/>
+    </StackLayout>
+</ContentPage>

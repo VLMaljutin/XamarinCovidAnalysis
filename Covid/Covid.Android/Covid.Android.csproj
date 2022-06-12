@@ -79,6 +79,9 @@
     <AndroidAsset Include="Assets\death.csv" />
     <AndroidAsset Include="Assets\recovery.csv" />
     <AndroidAsset Include="Assets\infections.csv" />
+    <AndroidAsset Include="Assets\recovery_day.csv" />
+    <AndroidAsset Include="Assets\infections_day.csv" />
+    <AndroidAsset Include="Assets\death_day.csv" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />

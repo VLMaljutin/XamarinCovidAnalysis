@@ -10,20 +10,21 @@ using Xamarin.Forms.Xaml;
 namespace Covid.ForForecast.Russia_Forecast
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Infection_Russia_Forecast : ContentPage
+    public partial class Infection_Russia_Forecast_Day : ContentPage
     {
         public int type;
-        public Infection_Russia_Forecast()
+        public Infection_Russia_Forecast_Day()
         {
             InitializeComponent();
         }
         private void DatePicker_DateSelected(object sender, DateChangedEventArgs e)
         {
             Infection_Forecast inf_forecast = new Infection_Forecast();
-            List<string> data = inf_forecast.DataInfections(7);
+            List<string> data = inf_forecast.DataInfectionsDay(7);
             DateTime date = new DateTime(2022, 5, 31);
             int a = date.Subtract(e.NewDate).Days;
-            if (a>=0){
+            if (a >= 0)
+            {
                 double[] inputs = new double[data.Count - a];
                 double[] outputs = new double[data.Count - a];
                 double[] pred = new double[outputs.Length];
@@ -50,11 +51,11 @@ namespace Covid.ForForecast.Russia_Forecast
                     PolynomialRegression poly = ls.Learn(inputs, outputs);
                     pred = poly.Transform(inputs);
                 }
-                double error_one = new AccuracyLoss(outputs).Loss(pred);
+                double error_one = new ZeroOneLoss(outputs).Loss(pred);
                 var culture = new CultureInfo("ru-RU");
                 real.Text = "Реальное значение " + outputs[outputs.Length - 1].ToString("#,#", culture);
                 prediction.Text = "Прогноз " + ((int)pred[pred.Length - 1]).ToString("#,#", culture);
-                error.Text = "Общая точность прогноза " + (100 * Math.Round(1 - error_one, 4)).ToString() + "%";
+                error.Text = "Точность прогноза " + (100 * Math.Round(1 - error_one, 4)).ToString() + "%";
             }
             else
             {
@@ -74,7 +75,7 @@ namespace Covid.ForForecast.Russia_Forecast
                     var culture = new CultureInfo("ru-RU");
                     OrdinaryLeastSquares ols = new OrdinaryLeastSquares();
                     SimpleLinearRegression regression = ols.Learn(inputs, outputs);
-                    pred = regression.Transform(inputs.Length-a);
+                    pred = regression.Transform(inputs.Length - a);
                     prediction.Text = "Прогноз " + ((int)pred).ToString("#,#", culture);
                 }
                 else if (type == 2)
@@ -85,12 +86,12 @@ namespace Covid.ForForecast.Russia_Forecast
                     };
                     var culture = new CultureInfo("ru-RU");
                     PolynomialRegression poly = ls.Learn(inputs, outputs);
-                    pred = poly.Transform(inputs.Length-a);
+                    pred = poly.Transform(inputs.Length - a);
                     prediction.Text = "Прогноз " + ((int)pred).ToString("#,#", culture);
                 }
                 real.Text = "Реальных данных нет";
             }
-            
+
         }
 
         private void picker_SelectedIndexChanged(object sender, EventArgs e)
